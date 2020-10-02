@@ -34,3 +34,7 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+
+# not sure if this should be ignored
+/config/credentials.yml.enc
