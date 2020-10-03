@@ -1,5 +1,5 @@
 class BlogsController < ApplicationController
-  before_action :set_blog, only: %i[edit update destroy]
+  before_action :set_blog, only: %i[edit show update destroy toogle_status]
 
   # GET /blogs
   # GET /blogs.json
@@ -9,9 +9,7 @@ class BlogsController < ApplicationController
 
   # GET /blogs/1
   # GET /blogs/1.json
-  def show
-    @blog = Blog.friendly.find(params[:id])
-  end
+  def show; end
 
   # GET /blogs/new
   def new
@@ -61,11 +59,21 @@ class BlogsController < ApplicationController
     end
   end
 
+  def toogle_status
+    if @blog.published?
+      @blog.draft!
+    else
+      @blog.published!
+    end
+
+    redirect_to blogs_url
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
   def set_blog
-    @blog = Blog.find(params[:id])
+    @blog = Blog.friendly.find(params[:id])
   end
 
   # Only allow a list of trusted parameters through.
