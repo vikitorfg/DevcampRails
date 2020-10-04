@@ -3,6 +3,10 @@ class PortfoliosController < ApplicationController
     @portfolio_items = Portfolio.all
   end
 
+  def pythondjango
+    @pythondjango_portfolio_items = Portfolio.pythondjango
+  end
+
   def new
     @portfolio_items = Portfolio.new
   end
