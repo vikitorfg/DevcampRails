@@ -45,3 +45,9 @@ end
     percent_utilized: 15
   )
 end
+
+3.times do |_technology|
+  Portfolio.last.technologies.create!(
+    name: 'Ruby'
+  )
+end
