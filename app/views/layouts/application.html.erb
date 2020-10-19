@@ -11,8 +11,6 @@
     <%= login_helper %>
     <%= render "shared/nav" %>
     <%= yield %>
-    <% if session[:source] %>
-      Thanks for visiting me from <%= session[:source]%>
-    <% end %>
+    <%= session_helper %>
   </body>
 </html>
