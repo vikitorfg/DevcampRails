@@ -10,9 +10,11 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body class="text-center">
-    <%= login_helper %>
-    <%= render "shared/nav" %>
-    <%= yield %>
-    <%= session_helper %>
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <%= login_helper %>
+      <%= render "shared/nav" %>
+      <%= yield %>
+      <%= session_helper %>
+    </div>
   </body>
 </html>
