@@ -1,4 +1,7 @@
 class PortfoliosController < ApplicationController
+  before_action :set_portfolio_items, only: %i[edit show update destroy]
+  access all: %i[show index pythondjango], user: { except: %i[destroy new create update edit] }, site_admin: :all
+
   def index
     @portfolio_items = Portfolio.all
   end
@@ -12,13 +15,9 @@ class PortfoliosController < ApplicationController
     3.times { @portfolio_items.technologies.build }
   end
 
-  def edit
-    @portfolio_items = Portfolio.find(params[:id])
-  end
+  def edit; end
 
-  def show
-    @portfolio_items = Portfolio.find(params[:id])
-  end
+  def show; end
 
   def create
     @portfolio_items = Portfolio.new(portfolio_items_params)
@@ -33,8 +32,6 @@ class PortfoliosController < ApplicationController
   end
 
   def update
-    @portfolio_items = Portfolio.find(params[:id])
-
     respond_to do |format|
       if @portfolio_items.update(portfolio_items_params)
         format.html { redirect_to portfolios_path, notice: 'Portfolio was successfully updated.' }
@@ -45,8 +42,6 @@ class PortfoliosController < ApplicationController
   end
 
   def destroy
-    @portfolio_items = Portfolio.find(params[:id])
-
     @portfolio_items.destroy
     respond_to do |format|
       format.html { redirect_to portfolios_path, notice: 'Record was successfully destroyed.' }
@@ -54,6 +49,10 @@ class PortfoliosController < ApplicationController
   end
 
   private
+
+  def set_portfolio_items
+    @portfolio_items = Portfolio.find(params[:id])
+  end
 
   def portfolio_items_params
     params.require(:portfolio).permit(:title,

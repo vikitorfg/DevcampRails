@@ -1,5 +1,6 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: %i[edit show update destroy toogle_status]
+  access all: %i[show index], user: { except: %i[destroy new create update edit] }, site_admin: :all
 
   # GET /blogs
   # GET /blogs.json
