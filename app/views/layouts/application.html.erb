@@ -11,10 +11,10 @@
   </head>
   <body class="text-center">
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-      <%= login_helper %>
       <%= render "shared/nav" %>
       <%= yield %>
       <%= session_helper %>
+      <%= render "shared/application_footer" %>
     </div>
   </body>
 </html>
