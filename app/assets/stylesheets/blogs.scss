@@ -1,6 +1,6 @@
 /* Custom bootstrap variables must be set or imported *before* bootstrap. */
 @import "bootstrap";
-
+@import "font-awesome";
 /* stylelint-disable selector-list-comma-newline-after */
 
 .blog-header {
@@ -125,4 +125,8 @@ h6 {
 
 .blog-nav a {
   color: white;
+}
+
+.social-links li {
+  font-size: 4rem;
 }
