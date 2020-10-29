@@ -1,10 +1,10 @@
 <section class="jumbotron text-center">
   <div class="container">
-    <h1>Album example</h1>
-    <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
+    <h1>My collection</h1>
+    <p class="lead text-muted">Some of my latest and/or favorite works so far. Fell free to click on them to learn a bit more about it and visit some that may be still up and running</p>
     <p>
-      <a href="#" class="btn btn-primary my-2">Main call to action</a>
-      <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+      <%= link_to "Find out more about me ", about_me_path, class: 'btn btn-primary my-2' %>
+      <%= link_to "Check out my blog", blogs_path, class: 'btn btn-secondary my-2' %>
     </p>
   </div>
 </section>
