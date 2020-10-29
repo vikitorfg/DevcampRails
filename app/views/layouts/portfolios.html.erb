@@ -8,9 +8,12 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
+    <%= render "shared/portfolio_header"%>
+    <%= render "shared/portfolio_section"%>
+    <%= yield %>
+    <%= render "shared/portfolio_footer"%>
     <%= login_helper %>
     <%= render "shared/nav" %>
-    <%= yield %>
     <%= session_helper %>
   </body>
 </html>
