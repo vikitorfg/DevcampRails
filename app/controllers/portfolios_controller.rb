@@ -3,7 +3,7 @@ class PortfoliosController < ApplicationController
   access all: %i[show index pythondjango], user: { except: %i[destroy new create update edit] }, site_admin: :all
 
   def index
-    @portfolio_items = Portfolio.all
+    @portfolio_items = Portfolio.by_position
   end
 
   def pythondjango
