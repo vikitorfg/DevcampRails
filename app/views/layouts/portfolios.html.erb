@@ -11,7 +11,9 @@
   <body>
     <%= render "shared/portfolio_header"%>
     <%= render "shared/portfolio_section" unless logged_in?(:site_admin)%>
-    <%= yield %>
+    <div class="portfolio-container">
+      <%= yield %>
+    </div>
     <%= render "shared/portfolio_footer"%>
     <%= session_helper %>
   </body>

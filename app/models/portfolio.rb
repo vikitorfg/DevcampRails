@@ -11,12 +11,12 @@ class Portfolio < ApplicationRecord
 
   scope :pythondjango, -> { where(subtitle: 'Python Django') }
 
-  after_initialize :set_defaults
+  # after_initialize :set_defaults
 
-  def set_defaults
-    self.main_image ||= Placeholder.image_generator(height: 600, width: 400)
-    self.thumb_image ||= Placeholder.image_generator(height: 300, width: 200)
-  end
+  # def set_defaults
+  #   self.main_image ||= Placeholder.image_generator(height: 600, width: 400)
+  #   self.thumb_image ||= Placeholder.image_generator(height: 300, width: 200)
+  # end
 
   def self.by_position
     order('position ASC')
