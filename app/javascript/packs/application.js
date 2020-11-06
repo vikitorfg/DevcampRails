@@ -16,3 +16,10 @@ require("jquery");
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+require("helpers/alert");
+
+require("trix");
+require("@rails/actiontext");
+
+require("webpack-jquery-ui");
+require("webpack-jquery-ui/css");
