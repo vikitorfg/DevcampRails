@@ -6,6 +6,9 @@ class Portfolio < ApplicationRecord
   include Placeholder
   validates_presence_of :title, :body, :main_image, :thumb_image
 
+  mount_uploader :thumb_image, PortfolioUploader
+  mount_uploader :main_image, PortfolioUploader
+
   scope :pythondjango, -> { where(subtitle: 'Python Django') }
 
   after_initialize :set_defaults
@@ -15,8 +18,7 @@ class Portfolio < ApplicationRecord
     self.thumb_image ||= Placeholder.image_generator(height: 300, width: 200)
   end
 
-
   def self.by_position
-    order("position ASC")
+    order('position ASC')
   end
 end
